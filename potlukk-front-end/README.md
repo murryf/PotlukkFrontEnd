@@ -8,13 +8,13 @@
 
 ## Components
 - **Items**
-    01. item-viewer-page
-    02. item-register-page
+  - item-viewer-page
+  - item-register-page
 - **Potluck**
-    03. potluck-viewer-page
-    04. potluck-register-page
+  - potluck-viewer-page
+  - potluck-register-page
 - **User**
-    05. user-viewer-page
-    06. user-register-page
+  - user-viewer-page
+  - user-register-page
 - ***PARENT***
-    07. manager-page
+  - manager-page
