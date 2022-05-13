@@ -4,31 +4,34 @@ import { useState } from "react"
 
 export default function PotluckRegistrationPage(){
 
+    //Consts for storage of local information
     const [potluckName, setPotluckName] = useState("");
     const [potluckDate, setPotluckDate] = useState("");
     const [creatorId, setCreatorId] = useState("");
     
+
+    //Method to update local name
     function updateName(event){
         setPotluckName(event.target.value)
         console.log(potluckName)
     }
 
+    //method to update local date
     function updateDate(event){
         setPotluckDate(event.target.value)
         console.log(potluckDate)
     }
 
+    //method to update local creator
     function updateCreator(event){
         setCreatorId(event.target.value)
         console.log(creatorId)
     }
 
+    //html to be returned
     return(<>
-        
-            <h1>Register Potluck</h1>
-
+            <h1>Register Potluck</h1>   
             <fieldset>
-
                 <legend>Register Potluck</legend>
                 <br/>
                 <label>Potluck Name</label>

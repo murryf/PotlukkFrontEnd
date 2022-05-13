@@ -12,10 +12,12 @@ export default function PotluckViewerPage(){
 
     // const [potlucks, setPotlucks] = useState([]);
 
+    //Consts for dummy values
     const potlucks = [{id:1, potluckName:"Jill Birthday", potluckDate:"12/12/12", creator: 5},
     {id:2, potluckName:"Fellowship Guilde", potluckDate:"1/2/33", creator: 2},
     {id:3, potluckName:"Miller Family Cookout", potluckDate:"4/4/22", creator: 7}]
 
+    //Method to map the potlucks into table rows
     const potluckRows = potlucks.map(p => <tr key={p.id}>
            <td>{p.id}</td>
            <td>{p.potluckName}</td>
@@ -24,6 +26,7 @@ export default function PotluckViewerPage(){
 
         </tr>)
 
+        //jsx "html" response
     return (<>
         <h1>Poltuck viewer</h1>
         <table>
