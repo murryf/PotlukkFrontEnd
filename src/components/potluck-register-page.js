@@ -2,56 +2,62 @@ import { useState } from "react"
 
 
 
-export default function PotluckRegistrationPage(){
+export default function PotluckRegistrationPage(props) {
 
-    //Consts for storage of local information
+    const addPotluck = props.onAddPotluck;
+
     const [potluckName, setPotluckName] = useState("");
     const [potluckDate, setPotluckDate] = useState("");
     const [creatorId, setCreatorId] = useState("");
-    
 
-    //Method to update local name
-    function updateName(event){
+    function updatePotluckName(event) {
         setPotluckName(event.target.value)
-        console.log(potluckName)
     }
 
-    //method to update local date
-    function updateDate(event){
+    function updatePotluckDate(event) {
         setPotluckDate(event.target.value)
-        console.log(potluckDate)
     }
 
-    //method to update local creator
-    function updateCreator(event){
+    function updateCreatorID(event) {
         setCreatorId(event.target.value)
-        console.log(creatorId)
     }
 
-    //"html" to be returned
-    return(<>
-            <h1>Register Potluck</h1>   
-            <fieldset>
-                <legend>Register Potluck</legend>
-                <br/>
-                <label>Potluck Name</label>
-                <br/>
-                <input onChange={updateName} name = "potluckName" type = "text" placeholder = "Mick's retirement"/>
-                <br/>
+    function createPotluck(event) {
+        const potluck = { potluckName: potluckName, potluckDate: potluckDate, creatorId: creatorId };
+        console.log(potluck)
+        addPotluck(potluck)
+    }
 
-                <label>Potluck Date</label>
-                <br/>
-                <input onChange={updateDate} name = "potluckDate" type = "text"  placeholder="12/12/22"/>
-                <br/>
 
-                <label>Creator ID</label>
-                <br/>
-                <input onChange={updateCreator} name = "creatorId" type = "text" placeholder="1" />
-                <br/>
-                <button>Register Potluck</button>
 
-            </fieldset>
-        </>)
+
+    return (<>
+
+        <h1>Register Potluck</h1>
+
+        <fieldset>
+
+            <legend>Register Potluck</legend>
+            <br />
+            <label>Potluck Name</label>
+            <br />
+            <input onInput={updatePotluckName} name="potluckName" type="text" placeholder="Mick's retirement" />
+            <br />
+
+            <label>Potluck Date</label>
+            <br />
+            <input onInput={updatePotluckDate} name="potluckDate" type="text" placeholder="12/12/22" />
+            <br />
+
+            <label>Creator ID</label>
+            <br />
+            <input onInput={updateCreatorID} name="creatorId" type="text" placeholder="1" />
+            <br />
+            <br />
+            <button onClick={createPotluck}>Create Potluck</button>
+
+        </fieldset>
+    </>)
 
 
 }
