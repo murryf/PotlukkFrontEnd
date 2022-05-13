@@ -3,16 +3,10 @@ import { useState, useEffect } from "react";
 
 export default function ItemViewerPage(){
 
-    const [items, setItems] = useState([]);
 
-
-    async function getAllItems(){
-        const response = await fetch("http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/items")    
-        const body = await response.json();
-        setItems(body)
-    }
-
-    useEffect(() => {getAllItems()},[]);
+    const items = [{id:1, name:"Coleslaw", description: "Fresh with crasins", status:"wanted", supplier: "Morgan", potluckID: 1},
+    {id:2, name:"Burgers", description: "Grilled Burgers", status:"Fulfilled", supplier: "Jessica", potluckID: 1},
+    {id:3, name:"Cake", description: "Sheet Cake with Jill's face on it", status:"Needed", supplier: "Phll", potluckID: 1}]
 
     const itemRows = items.map( i => <tr key={i.id}>
             <td>{i.id}</td>
