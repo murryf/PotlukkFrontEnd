@@ -28,7 +28,7 @@ export default function PotluckRegistrationPage(){
         console.log(creatorId)
     }
 
-    //html to be returned
+    //"html" to be returned
     return(<>
             <h1>Register Potluck</h1>   
             <fieldset>
