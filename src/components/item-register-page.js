@@ -32,7 +32,7 @@ export default function ItemRegistrationPage(){
         console.log(potluckId)
     }
 
-    //html to render the page
+    //"html" to render the page
     return(<>
         <h1>Item Registration</h1>
         <fieldset>

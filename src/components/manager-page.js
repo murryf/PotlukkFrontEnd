@@ -8,7 +8,7 @@ import UserRegisterPage from "./user-register-page";
 export default function ManagerPage(){
 
 
-    //returns html
+    //returns "html"
     return(<>
         <PotluckViewerPage/>
         <ItemViewerPage/>
