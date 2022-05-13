@@ -4,13 +4,21 @@ import { useState, useEffect } from "react";
 export default function PotluckViewerPage(props) {
 
 
-    const potlucks = []
+    const [potlucks, setPotlucks] = useState([]);
 
-    const potluckRows = props.potluckList.map(p => <tr key={p.id}>
+    async function getAllPotlucks(){
+        const response = await fetch("http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks");
+        const body = await response.json();
+        setPotlucks(body)
+    }
+
+    useEffect(() => {getAllPotlucks()},[]);
+
+    const potluckRows = potlucks.map(p => <tr key={p.id}>
         <td>{p.id}</td>
         <td>{p.potluckName}</td>
         <td>{p.potluckDate}</td>
-        <td>{p.creatorId}</td>
+        <td>{p.creator}</td>
 
     </tr>)
 

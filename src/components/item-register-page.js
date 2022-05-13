@@ -2,7 +2,9 @@ import { useState } from "react"
 
 
 
-export default function ItemRegistrationPage(){
+export default function ItemRegistrationPage(props){
+
+ 
 
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -29,6 +31,8 @@ export default function ItemRegistrationPage(){
         setPotluckId(event.target.value)
         console.log(potluckId)
     }
+
+   
 
 
     return(<>
