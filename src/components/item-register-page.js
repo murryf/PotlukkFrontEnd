@@ -37,20 +37,22 @@ export default function ItemRegistrationPage(){
             <legend>Register Item</legend>
 
             <label>Item Name</label>
+            <br/>
             <input onChange={updateItemName} name="name" type="text" placeholder="Fruit Salad"/>
             <br/>
             <label>Description</label>
+            <br/>
             <input onChange={updateItemDesc} name="description" type="text" placeholder="Apples, grapes, cantalope"/>
 
             <br/>
             <label>Supplier</label>
+            <br/>
             <input onChange={updateItemSupplier} name="supplier" type="text" placeholder="John Doe"/>
 
             <br/>
             <label>Potluck ID</label>
-            <input onChange={updatePotluckId} name="potluck" type="text" placeholder="Jill's retirement"/>
-
-
+            <br/>
+            <input onChange={updatePotluckId} name="potluck" type="text" placeholder="1"/>
 
         </fieldset>
     
