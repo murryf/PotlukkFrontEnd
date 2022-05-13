@@ -14,7 +14,6 @@
   - potluck-viewer-page
   - potluck-register-page
 - **User**
-  - user-viewer-page
   - user-register-page
 - ***PARENT***
   - manager-page
