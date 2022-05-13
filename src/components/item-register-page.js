@@ -53,6 +53,8 @@ export default function ItemRegistrationPage(){
             <label>Potluck ID</label>
             <br/>
             <input onChange={updatePotluckId} name="potluck" type="text" placeholder="1"/>
+            <br/>
+            <button>Register Item</button>
 
         </fieldset>
     
