@@ -8,7 +8,7 @@ export default function PotluckRegistrationPage(props) {
 
     const [potluckName, setPotluckName] = useState("");
     const [potluckDate, setPotluckDate] = useState("");
-    const [creatorId, setCreatorId] = useState("");
+    const [creator, setCreatorId] = useState("");
 
     function updatePotluckName(event) {
         setPotluckName(event.target.value)
@@ -22,10 +22,27 @@ export default function PotluckRegistrationPage(props) {
         setCreatorId(event.target.value)
     }
 
-    function createPotluck(event) {
-        const potluck = { potluckName: potluckName, potluckDate: potluckDate, creatorId: creatorId };
-        console.log(potluck)
-        addPotluck(potluck)
+    async function createPotluck() {
+        const potluck = { id: 0, potluckName: potluckName, potluckDate: potluckDate, creator: creator };
+
+
+
+        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks`, {
+            body: JSON.stringify(potluck),
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+
+        if (response.status === 200) {
+            const body = await response.json()
+            console.log("Potluck added" + potluck)
+            addPotluck(body)
+        } else {
+            console.log("Failed to add potluck.")
+        }
+
     }
 
 
