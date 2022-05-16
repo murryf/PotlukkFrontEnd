@@ -60,5 +60,6 @@ export default function ManagerPage() {
         <PotluckUpdate onPotluckUpdate={updatePotluck} />
         <PotluckViewerPage potluckList={potlucks} />
         <UserRegisterPage />
+      
     </>)
 }
