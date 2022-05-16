@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import ItemDeleter from "./item-delete-page";
 import ItemRegistrationPage from "./item-register-page";
 import ItemViewerPage from "./item-viewer-page";
@@ -52,14 +53,26 @@ export default function ManagerPage() {
     useEffect(() => {getAllItems()},[])
 
     return (<>
-        <ItemViewerPage itemList={items}/>
-        <ItemRegistrationPage onAddItem={addItem}/>
-        <ItemDeleter onDeleteItem={deleteItem}/>
-        <PotluckRegistrationPage onAddPotluck={addPotluck} />
-        <PotluckDeleter onDeletePotlucks={deletePotluck} />
-        <PotluckUpdate onPotluckUpdate={updatePotluck} />
-        <PotluckViewerPage potluckList={potlucks} />
-        <UserRegisterPage />
+
+    <h1>Main</h1>
+
+    <BrowserRouter>
+        <Routes>
+            <Route path="itemviewer" element={ <ItemViewerPage itemList={items}/>}/>
+            <Route path="itemregister" element={<ItemRegistrationPage onAddItem={addItem}/>}/>
+            <Route path="deleteitem" element={<ItemDeleter onDeleteItem={deleteItem}/>}/>
+
+            <Route path="potluckViewer" element={<PotluckViewerPage potluckList={potlucks} />}/>
+            <Route path="potluckregister" element={<PotluckRegistrationPage onAddPotluck={addPotluck} />}/>
+            <Route path="potluckdeleter" element={<PotluckDeleter onDeletePotlucks={deletePotluck} />}/>    
+            <Route path="potluckupdate" element={<PotluckUpdate onPotluckUpdate={updatePotluck} />}/>
+
+            <Route path="userRegister" element={<UserRegisterPage />}/>
+
+        </Routes>
+    
+    </BrowserRouter>
+   
       
     </>)
 }

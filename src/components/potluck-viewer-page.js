@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 
 export default function PotluckViewerPage(props) {
@@ -29,6 +30,8 @@ export default function PotluckViewerPage(props) {
                 {potluckRows}
             </tbody>
         </table>
+        <br/>
+        <Link to="/">Main Page</Link>
 
     </>)
 }

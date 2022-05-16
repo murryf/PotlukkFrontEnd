@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 
 export default function PotluckDeleter(props) {
@@ -49,5 +50,7 @@ export default function PotluckDeleter(props) {
             <button onClick={deletePotluck}>Delete Potluck</button>
 
         </fieldset>
+        <br/>
+        <Link to="/">Main Page</Link>
     </>)
 }

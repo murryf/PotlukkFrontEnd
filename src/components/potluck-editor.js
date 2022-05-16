@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 
 export default function PotluckUpdate(props) {
@@ -57,5 +58,7 @@ export default function PotluckUpdate(props) {
             <button onClick={updatePotluck}>Update Potluck</button>
 
         </fieldset>
+        <br/>
+        <Link to="/">Main Page</Link>
     </>)
 }

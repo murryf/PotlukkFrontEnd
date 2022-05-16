@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 export default function ItemRegistrationPage(props){
 
@@ -67,6 +68,7 @@ export default function ItemRegistrationPage(props){
 
     return(<>
         <h1>Item Registration</h1>
+        
         <fieldset>
             <legend>Register Item</legend>
 
@@ -91,5 +93,8 @@ export default function ItemRegistrationPage(props){
             <br/>
             <button onClick={makeItem}>Register Item</button>
         </fieldset>
+        <br/>
+        {/* <Link to="/">Main Page</Link> */}
+
     </>)
 }

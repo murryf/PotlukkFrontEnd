@@ -33,6 +33,8 @@ export default function UserLogInPage(){
             <br/>
             <button>Log In</button>    
         </fieldset>
+        <br/>
+        <Link to="/">Main Page</Link>
     </>)
 
 }

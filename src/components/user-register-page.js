@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { Link } from "react-router-dom";
+
 
 
 export default function UserRegisterPage(){
@@ -67,6 +69,8 @@ export default function UserRegisterPage(){
             <button onClick={createUser}>Submit</button>
 
         </fieldset>
+        <br/>
+        {/* <Link to="/">Main Page</Link> */}
     
     </>)
 }
