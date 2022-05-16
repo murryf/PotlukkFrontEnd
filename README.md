@@ -10,9 +10,12 @@
 - **Items**
   - item-viewer-page
   - item-register-page
+  - item delete page
 - **Potluck**
   - potluck-viewer-page
   - potluck-register-page
+  - potluck-delete-page
+  - potluck-update-page
 - **User**
   - user-register-page
 - ***PARENT***
