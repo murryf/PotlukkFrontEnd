@@ -1,3 +1,4 @@
+import userEvent from "@testing-library/user-event";
 import { useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
@@ -9,23 +10,38 @@ export default function PotluckDeleter(props) {
 
     const [potluckId, setPotluckId] = useState("");
 
+    let potluck = "";
+
+
     async function deletePotluck() {
-        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}`, {
-            body: JSON.stringify(potluckId),
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
+
+        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}`);
+        const body = await response.json();
+        potluck = body;
+        const userStuff = JSON.parse(sessionStorage.getItem("user"))
+
+
+
+        if (potluck.creator === userStuff.userID) {
+            const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}`, {
+                body: JSON.stringify(potluckId),
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            if (response.status === 200) {
+                const body = await response.json()
+                console.log(`Potluck ${potluckId} deleted`)
+                deleteThisPotluck(body)
+            } else {
+                console.log("Failed to add potluck.")
             }
-        });
 
-        if (response.status === 200) {
-            const body = await response.json()
-            console.log(`Potluck ${potluckId} deleted`)
-            deleteThisPotluck(body)
         } else {
-            console.log("Failed to add potluck.")
+            alert("You do not have authorization to delete this.")
         }
-
 
     }
 
@@ -50,6 +66,6 @@ export default function PotluckDeleter(props) {
             <button onClick={deletePotluck}>Delete Potluck</button>
 
         </fieldset>
-        
+
     </>)
 }
