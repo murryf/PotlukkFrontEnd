@@ -7,7 +7,7 @@ import ManagerPage from './components/manager-page';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <h1>Potlukk</h1>
+    <h1>Stellar Potlukk App</h1>
     
     <ManagerPage/>
   </React.StrictMode>
