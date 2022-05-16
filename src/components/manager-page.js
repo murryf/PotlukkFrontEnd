@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ItemDeleter from "./item-delete-page";
 import ItemRegistrationPage from "./item-register-page";
 import ItemViewerPage from "./item-viewer-page";
 import PotluckDeleter from "./potluck-deleter";
@@ -43,6 +44,9 @@ export default function ManagerPage() {
         getAllItems();
     }
 
+    function deleteItem(){
+        getAllItems();
+    }
 
     useEffect(() => { getAllPotlucks() }, [])
     useEffect(() => {getAllItems()},[])
@@ -50,6 +54,7 @@ export default function ManagerPage() {
     return (<>
         <ItemViewerPage itemList={items}/>
         <ItemRegistrationPage onAddItem={addItem}/>
+        <ItemDeleter onDeleteItem={deleteItem}/>
         <PotluckRegistrationPage onAddPotluck={addPotluck} />
         <PotluckDeleter onDeletePotlucks={deletePotluck} />
         <PotluckUpdate onPotluckUpdate={updatePotluck} />
