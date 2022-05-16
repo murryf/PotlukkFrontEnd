@@ -56,34 +56,46 @@ export default function ManagerPage() {
     return (<>
 
         <BrowserRouter>
-            <h1>Choose Your Path</h1>
+            <div class="pageheading">
+                <label class="head_label">Stellar Potlukk App</label>
+                <fieldset>
+                    <legend class="yellow">Choose Your Path...</legend>
+                    <br />
+                    <div class="link_grid">
+                        <div class="link_01"><button><Link to="/potlucks">Go to potlucks...</Link></button></div>
+                        <div class="link_02"><button><Link to="/items">Go to items...</Link></button></div>
+                        <div class="link_03"><button><Link to="/userregister">Log In...</Link></button></div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="routes">
+                <Routes>
+                    <Route path="items" element={
+                        <>
+                            <div class="item_view"><ItemViewerPage itemList={items} /></div>
+                            <div class="item_reg"><ItemRegistrationPage onAddItem={addItem} /></div>
+                            <div class="item_del"><ItemDeleter onDeleteItem={deleteItem}/></div>
+                        </>
+                    }/>
 
-            <fieldset>
-                <legend>Do You Want To...</legend>
-                <br />
-                <label></label>
-                <br />
-                <button><Link to="/potlucks">Go to potlucks</Link></button>
-                <br /><br /><br />
-                <button ><Link to="/items">Go to items</Link></button>
-                <br /><br /><br />
-                <button><Link to="/userregister">Log In</Link></button>
-            </fieldset>
+                    <Route path="potlucks" element={
+                        <>
+                            <div class="potluck_view"><PotluckViewerPage potluckList={potlucks} /></div>
+                            <div class="potluck_reg"><PotluckRegistrationPage onAddPotluck={addPotluck} /></div>
+                            <div class="potluck_del"><PotluckDeleter onDeletePotlucks={deletePotluck} /></div>
+                            <div class="potluck_up"><PotluckUpdate onPotluckUpdate={updatePotluck} /></div>
+                        </>
+                    }/>
 
-            <Routes>
-                <Route path="items" element={<><ItemViewerPage itemList={items} />
-                    <ItemRegistrationPage onAddItem={addItem} />
-                    <ItemDeleter onDeleteItem={deleteItem} /></>} />
+                    <Route path="userRegister" element={
+                        <>
+                            <UserRegisterPage />
+                            <UserLogInPage />
+                        </>
+                    }/>
 
-                <Route path="potlucks" element={<><PotluckViewerPage potluckList={potlucks} />
-                    <PotluckRegistrationPage onAddPotluck={addPotluck} />
-                    <PotluckDeleter onDeletePotlucks={deletePotluck} />
-                    <PotluckUpdate onPotluckUpdate={updatePotluck} /></>} />
-
-                <Route path="userRegister" element={<><UserRegisterPage /> <UserLogInPage /></>} />
-
-            </Routes>
-
+                </Routes>
+            </div>
         </BrowserRouter>
 
 
