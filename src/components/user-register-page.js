@@ -69,8 +69,7 @@ export default function UserRegisterPage(){
             <button onClick={createUser}>Submit</button>
 
         </fieldset>
-        <br/>
-        {/* <Link to="/">Main Page</Link> */}
+        
     
     </>)
 }

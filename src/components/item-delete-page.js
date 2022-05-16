@@ -43,8 +43,7 @@ export default function ItemDeleter(props){
             <button onClick={deleteItem}>Delete Item</button>
 
         </fieldset>
-        <br/>
-        <Link to="/">Main Page</Link>
+        
         
     </>)
 

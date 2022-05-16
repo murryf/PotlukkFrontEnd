@@ -50,7 +50,6 @@ export default function PotluckDeleter(props) {
             <button onClick={deletePotluck}>Delete Potluck</button>
 
         </fieldset>
-        <br/>
-        <Link to="/">Main Page</Link>
+        
     </>)
 }

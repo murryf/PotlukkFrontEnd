@@ -30,8 +30,7 @@ export default function PotluckViewerPage(props) {
                 {potluckRows}
             </tbody>
         </table>
-        <br/>
-        <Link to="/">Main Page</Link>
+       
 
     </>)
 }

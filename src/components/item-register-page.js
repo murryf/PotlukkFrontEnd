@@ -93,8 +93,7 @@ export default function ItemRegistrationPage(props){
             <br/>
             <button onClick={makeItem}>Register Item</button>
         </fieldset>
-        <br/>
-        <Link to="/">Main Page</Link>
+        
 
     </>)
 }
