@@ -55,14 +55,28 @@ export default function ManagerPage() {
     return (<>
 
     <BrowserRouter>
+    <h1>Choose Your Path</h1>
+
+            <fieldset>
+                <legend>Do You Want To...</legend>
+                <br />
+                <label></label>
+                <br />
+                <button><Link to="/potlucks">Go to potlucks</Link></button>
+                <br /><br /><br />
+                <button ><Link to="/items">Go to items</Link></button>
+                <br /><br /><br />
+                <button><Link to="/user">Log In</Link></button>
+            </fieldset>
+    
         <Routes>
-            <Route path="items" element={<><ItemViewerPage itemList={items}/>,
-            <ItemRegistrationPage onAddItem={addItem}/>,
+            <Route path="items" element={<><ItemViewerPage itemList={items}/>
+            <ItemRegistrationPage onAddItem={addItem}/>
             <ItemDeleter onDeleteItem={deleteItem}/></>}/>
 
-            <Route path="potlucks" element={<><PotluckViewerPage potluckList={potlucks}/>,
-            <PotluckRegistrationPage onAddPotluck={addPotluck} />,
-            <PotluckDeleter onDeletePotlucks={deletePotluck} />,
+            <Route path="potlucks" element={<><PotluckViewerPage potluckList={potlucks}/>
+            <PotluckRegistrationPage onAddPotluck={addPotluck} />
+            <PotluckDeleter onDeletePotlucks={deletePotluck} />
             <PotluckUpdate onPotluckUpdate={updatePotluck} /></>}/>
 
             <Route path="userRegister" element={<UserRegisterPage />}/>
@@ -70,6 +84,7 @@ export default function ManagerPage() {
         </Routes>
     
     </BrowserRouter>
+
    
     </>)
 }

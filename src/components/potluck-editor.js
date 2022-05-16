@@ -58,7 +58,6 @@ export default function PotluckUpdate(props) {
             <button onClick={updatePotluck}>Update Potluck</button>
 
         </fieldset>
-        <br/>
-        <Link to="/">Main Page</Link>
+        
     </>)
 }

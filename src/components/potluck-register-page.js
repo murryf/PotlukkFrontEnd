@@ -75,8 +75,7 @@ export default function PotluckRegistrationPage(props) {
             <button onClick={createPotluck}>Create Potluck</button>
 
         </fieldset>
-        <br/>
-        <Link to="/">Main Page</Link>
+        
     </>)
 
 

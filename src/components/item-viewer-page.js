@@ -40,8 +40,7 @@ export default function ItemViewerPage(props){
                 {itemRows}
             </tbody>
         </table>
-        <br/>
-        <Link to="/">Main Page</Link>
+        
 
     </>)
 }
