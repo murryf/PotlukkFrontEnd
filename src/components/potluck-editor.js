@@ -49,7 +49,7 @@ export default function PotluckUpdate(props) {
             <br />
             <input onInput={updatePotluckId} name="potluckId" type="text" placeholder="0" />
             <br />
-            <label>Potluck New Date and Time</label>
+            <label>New Potluck Date and Time</label>
             <br />
             <input onInput={updatePotluckDate} name="potluckDate" type="text" placeholder="12/1/2019 12:00 pm" />
             <br />
