@@ -27,7 +27,7 @@ export default function PotluckRegistrationPage(props) {
 
 
 
-        const response = await fetch(`https://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks`, {
+        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks`, {
             body: JSON.stringify(potluck),
             method: "POST",
             headers: {

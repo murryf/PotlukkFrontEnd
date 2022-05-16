@@ -7,7 +7,7 @@ export default function ItemViewerPage(props){
 
 
     async function getAllItems(){
-        const response = await fetch("https://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/items")    
+        const response = await fetch("http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/items")    
         const body = await response.json();
         setItems(body)
     }
