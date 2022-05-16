@@ -15,13 +15,13 @@ export default function ManagerPage() {
 
     async function getAllPotlucks() {
 
-        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks`)
+        const response = await fetch(`https://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks`)
         const body = await response.json();
         setPotlucks(body);
     }
 
     async function getAllItems(){
-        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/items`)
+        const response = await fetch(`https://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/items`)
         const body = await response.json();
         setItems(body);
     }
