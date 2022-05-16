@@ -39,15 +39,6 @@ export default function ItemRegistrationPage(props){
         console.log(potluckId)
     }
 
-    // render HTML
-    function renderInputLine(){
-			const itemListElem = document.getElementById("input_line");
-			let inputHTML = "";
-			for(const i of input){
-				inputHTML += i;
-			}
-			itemListElem.innerHTML = inputHTML;
-
     // makes new item and adds it to database
     // checks if the potluckID is valid
     async function makeItem(){
