@@ -8,6 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <h1>Team 3 is best team</h1>
+    <h1>Main page</h1>
     <ManagerPage/>
   </React.StrictMode>
 );
