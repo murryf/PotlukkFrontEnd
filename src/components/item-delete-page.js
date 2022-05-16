@@ -1,0 +1,48 @@
+import { useState } from "react";
+
+
+export default function ItemDeleter(props){
+
+    const deleteThisItem = props.onDeleteItem;
+
+    const [itemId, setItemId] = useState("");
+
+    async function deleteItem(){
+        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/items/${itemId}`,{
+            body: JSON.stringify(itemId),
+            method: "DELETE",
+            headers :{
+                "Content-Type":"application/json"
+            }
+        });
+
+        if(response.status === 200){
+            const body = await response.json()
+            console.log(`Item ${itemId} deleted`)
+            deleteThisItem(body)
+        } else {
+            console.log("Failed to delete item")
+        }
+    }
+
+    function updateItemID(event) {
+        setItemId(event.target.value)
+    }
+
+    return (<>
+        <h1>Delete Item</h1>
+        <fieldset>
+            <legend>Delete Item</legend>
+            <br/>
+            <label>Item ID</label>
+            <br/>
+            <input onInput={updateItemID} name="id" type="text" placeholder = "0" />
+            <br/><br/><br/>
+            <button onClick={deleteItem}>Delete Item</button>
+
+        </fieldset>
+        
+    </>)
+
+
+}
