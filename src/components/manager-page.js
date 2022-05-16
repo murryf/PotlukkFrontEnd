@@ -21,17 +21,17 @@ export default function ManagerPage() {
 
 
 
-    function addPotluck(potluck) {
-        const clonedPotlucks = [...potlucks];
-        console.log(potluck);
-        clonedPotlucks.push(potluck);
-        setPotlucks(clonedPotlucks)
+    function addPotluck() {
+        getAllPotlucks()
     }
 
-    function deletePotluck(potluck) {
-        const clonedPotlucks = [...potlucks];
-        clonedPotlucks.pop(potluck)
-        setPotlucks(clonedPotlucks)
+    function deletePotluck() {
+        getAllPotlucks()
+    }
+
+    function updatePotluck() {
+
+        getAllPotlucks()
     }
 
     useEffect(() => { getAllPotlucks() }, [])
@@ -42,6 +42,7 @@ export default function ManagerPage() {
         <ItemRegistrationPage />
         <PotluckRegistrationPage onAddPotluck={addPotluck} />
         <PotluckDeleter onDeletePotlucks={deletePotluck} />
+        <PotluckUpdate onPotluckUpdate={updatePotluck} />
         <PotluckViewerPage potluckList={potlucks} />
         <UserRegisterPage />
     </>)
