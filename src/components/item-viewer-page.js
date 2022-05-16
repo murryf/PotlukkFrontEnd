@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 
-export default function ItemViewerPage(){
+export default function ItemViewerPage(props){
 
     const [items, setItems] = useState([]);
 
@@ -14,7 +14,7 @@ export default function ItemViewerPage(){
 
     useEffect(() => {getAllItems()},[]);
 
-    const itemRows = items.map( i => <tr key={i.id}>
+    const itemRows = props.itemList.map( i => <tr key={i.id}>
             <td>{i.id}</td>
             <td>{i.name}</td>
             <td>{i.description}</td>

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 
 export default function ItemRegistrationPage(props){
+
+    const addItem = props.onAddItem;
+    
     // state variable for potlucks to be used to check, if valid potluck id exists
     const [potlucks, setPotlucks] = useState([]);
 
@@ -55,6 +58,8 @@ export default function ItemRegistrationPage(props){
         if(response.status === 200){
             const body = await response.json();
             alert(`New ITEM was registered for Potluck ${body.potluckID}`);
+            addItem(body);
+            
         }else{
             alert("ITEM CREATION FAILED!!!");
         }
