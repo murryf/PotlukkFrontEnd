@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+
 
 
 export default function ItemDeleter(props){
@@ -41,6 +43,8 @@ export default function ItemDeleter(props){
             <button onClick={deleteItem}>Delete Item</button>
 
         </fieldset>
+        <br/>
+        <Link to="/">Main Page</Link>
         
     </>)
 

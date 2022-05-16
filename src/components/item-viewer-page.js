@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+
 
 
 export default function ItemViewerPage(props){
@@ -38,6 +40,8 @@ export default function ItemViewerPage(props){
                 {itemRows}
             </tbody>
         </table>
+        <br/>
+        <Link to="/">Main Page</Link>
 
     </>)
 }

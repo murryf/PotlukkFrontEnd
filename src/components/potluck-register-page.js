@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 
 
@@ -74,6 +75,8 @@ export default function PotluckRegistrationPage(props) {
             <button onClick={createPotluck}>Create Potluck</button>
 
         </fieldset>
+        <br/>
+        <Link to="/">Main Page</Link>
     </>)
 
 
