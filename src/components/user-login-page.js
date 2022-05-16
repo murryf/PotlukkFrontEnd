@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 export default function UserLogInPage() {
 
     //Dummy values
-    const [username, setUserName] = useState("")
+    const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
 
@@ -20,9 +20,9 @@ export default function UserLogInPage() {
     }
 
     async function sendLoginInfo() {
-        const loginInfo = { username, password }
-        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/login`, {
-            method: "DELETE",
+        const loginInfo = { userName, password }
+        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/login`, {
+            method: "POST",
             body: JSON.stringify(loginInfo),
             headers: {
                 "Content-Type": "application/json"
@@ -32,6 +32,7 @@ export default function UserLogInPage() {
         const userInfo = await response.json()
         sessionStorage.setItem("user", JSON.stringify(userInfo));
         navigate("/potlucks")
+        console.log(userInfo);
     }
 
     //jsx "html" response
