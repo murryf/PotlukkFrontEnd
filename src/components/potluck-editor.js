@@ -10,8 +10,8 @@ export default function PotluckUpdate(props) {
     const [potluckDate, setPotluckDate] = useState("");
 
     async function updatePotluck() {
-        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}`, {
-            body: JSON.stringify(potluckId),
+        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}?date=${potluckDate}`, {
+            body: JSON.stringify(potluckDate),
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
