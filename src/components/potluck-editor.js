@@ -43,15 +43,15 @@ export default function PotluckUpdate(props) {
 
         <fieldset>
 
-            <legend>Delete Potluck</legend>
+            <legend>Update Potluck</legend>
             <br />
             <label>Potluck ID</label>
             <br />
             <input onInput={updatePotluckId} name="potluckId" type="text" placeholder="0" />
             <br />
-            <label>Potluck New Date</label>
+            <label>Potluck New Date and Time</label>
             <br />
-            <input onInput={updatePotluckDate} name="potluckDate" type="text" placeholder="12/1/2019" />
+            <input onInput={updatePotluckDate} name="potluckDate" type="text" placeholder="12/1/2019 12:00 pm" />
             <br />
             <br />
             <button onClick={updatePotluck}>Update Potluck</button>
