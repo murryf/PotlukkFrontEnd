@@ -66,7 +66,7 @@ export default function ManagerPage() {
                 <br /><br /><br />
                 <button ><Link to="/items">Go to items</Link></button>
                 <br /><br /><br />
-                <button><Link to="/user">Log In</Link></button>
+                <button><Link to="/userregister">Log In</Link></button>
             </fieldset>
     
         <Routes>
