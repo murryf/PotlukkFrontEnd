@@ -31,7 +31,7 @@ export default function UserRegisterPage(){
     async function createUser(){
         const user = {userID:0,userName:name,password:password}
         console.log(user)
-        const response = await fetch("https://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/users",{
+        const response = await fetch("http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/users",{
             body:JSON.stringify(user),
             method:"POST",
             headers:{

@@ -9,7 +9,7 @@ export default function ItemRegistrationPage(props){
 
     // gets all potlucks for aforesaid existence-check
     async function getAllPotlucks(){
-        const response = await fetch("https://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks");
+        const response = await fetch("http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks");
         const body = await response.json();
         setPotlucks(body);
     }
