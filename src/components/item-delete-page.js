@@ -32,20 +32,14 @@ export default function ItemDeleter(props){
     }
 
     return (<>
-        <h1>Delete Item</h1>
         <fieldset>
-            <legend>Delete Item</legend>
+            <legend class="red">Delete Item</legend>
             <br/>
             <label>Item ID</label>
             <br/>
             <input onInput={updateItemID} name="id" type="text" placeholder = "0" />
             <br/><br/><br/>
-            <button onClick={deleteItem}>Delete Item</button>
-
+            <button class="red" onClick={deleteItem}>Delete Item</button>
         </fieldset>
-        
-        
     </>)
-
-
 }
