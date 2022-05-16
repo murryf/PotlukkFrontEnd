@@ -11,6 +11,8 @@ export default function PotluckRegistrationPage(props) {
     const [potluckDate, setPotluckDate] = useState("");
     const [creator, setCreatorId] = useState("");
 
+    let potluck = "";
+
     function updatePotluckName(event) {
         setPotluckName(event.target.value)
     }
@@ -28,20 +30,32 @@ export default function PotluckRegistrationPage(props) {
 
 
 
-        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks`, {
-            body: JSON.stringify(potluck),
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
+        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks`);
+        const body = await response.json();
+        potluck = body;
+        const userStuff = JSON.parse(sessionStorage.getItem("user"))
 
-        if (response.status === 200) {
-            const body = await response.json()
-            console.log("Potluck added" + potluck)
-            addPotluck(body)
+
+
+        if (potluck.creator === userStuff.userID) {
+
+            const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks`, {
+                body: JSON.stringify(potluck),
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            if (response.status === 200) {
+                const body = await response.json()
+                console.log("Potluck added" + potluck)
+                addPotluck(body)
+            } else {
+                console.log("Failed to add potluck.")
+            }
         } else {
-            console.log("Failed to add potluck.")
+            alert("You do not have authorization to create a potluck. Please log in to do so.")
         }
 
     }
@@ -75,7 +89,7 @@ export default function PotluckRegistrationPage(props) {
             <button onClick={createPotluck}>Create Potluck</button>
 
         </fieldset>
-        
+
     </>)
 
 

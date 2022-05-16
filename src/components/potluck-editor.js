@@ -10,21 +10,36 @@ export default function PotluckUpdate(props) {
     const [potluckId, setPotluckId] = useState("");
     const [potluckDate, setPotluckDate] = useState("");
 
-    async function updatePotluck() {
-        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}?date=${potluckDate}`, {
-            body: JSON.stringify(potluckDate),
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
+    let potluck = "";
 
-        if (response.status === 200) {
-            const body = await response.json()
-            console.log(`Potluck ${potluckId} updated`)
-            updateThisPotluck(body)
+    async function updatePotluck() {
+        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}`);
+        const body = await response.json();
+        potluck = body;
+        const userStuff = JSON.parse(sessionStorage.getItem("user"))
+
+
+
+        if (potluck.creator === userStuff.userID) {
+            const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}?date=${potluckDate}`, {
+                body: JSON.stringify(potluckDate),
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            if (response.status === 200) {
+                const body = await response.json()
+                console.log(body.creator)
+                console.log(`Potluck ${potluckId} updated`)
+                updateThisPotluck(body)
+            } else {
+                console.log("Failed to update potluck.")
+            }
+
         } else {
-            console.log("Failed to update potluck.")
+            alert("You do not have authorization to edit this.")
         }
 
 
@@ -58,6 +73,6 @@ export default function PotluckUpdate(props) {
             <button onClick={updatePotluck}>Update Potluck</button>
 
         </fieldset>
-        
+
     </>)
 }

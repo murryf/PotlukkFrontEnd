@@ -19,6 +19,7 @@ export default function UserLogInPage() {
         setPassword(event.target.value)
     }
 
+
     async function sendLoginInfo() {
         const loginInfo = { userName, password }
         const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/login`, {
