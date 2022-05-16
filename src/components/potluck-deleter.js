@@ -9,7 +9,7 @@ export default function PotluckDeleter(props) {
     const [potluckId, setPotluckId] = useState("");
 
     async function deletePotluck() {
-        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}`, {
+        const response = await fetch(`https://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}`, {
             body: JSON.stringify(potluckId),
             method: "DELETE",
             headers: {
