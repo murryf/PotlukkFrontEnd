@@ -7,6 +7,7 @@ import PotluckDeleter from "./potluck-deleter";
 import PotluckUpdate from "./potluck-editor";
 import PotluckRegistrationPage from "./potluck-register-page";
 import PotluckViewerPage from "./potluck-viewer-page";
+import UserLogInPage from "./user-login-page";
 import UserRegisterPage from "./user-register-page";
 
 export default function ManagerPage() {
@@ -21,7 +22,7 @@ export default function ManagerPage() {
         setPotlucks(body);
     }
 
-    async function getAllItems(){
+    async function getAllItems() {
         const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/items`)
         const body = await response.json();
         setItems(body);
@@ -41,21 +42,21 @@ export default function ManagerPage() {
         getAllPotlucks()
     }
 
-    function addItem(){
+    function addItem() {
         getAllItems();
     }
 
-    function deleteItem(){
+    function deleteItem() {
         getAllItems();
     }
 
     useEffect(() => { getAllPotlucks() }, [])
-    useEffect(() => {getAllItems()},[])
+    useEffect(() => { getAllItems() }, [])
 
     return (<>
 
-    <BrowserRouter>
-    <h1>Choose Your Path</h1>
+        <BrowserRouter>
+            <h1>Choose Your Path</h1>
 
             <fieldset>
                 <legend>Do You Want To...</legend>
@@ -68,23 +69,23 @@ export default function ManagerPage() {
                 <br /><br /><br />
                 <button><Link to="/userregister">Log In</Link></button>
             </fieldset>
-    
-        <Routes>
-            <Route path="items" element={<><ItemViewerPage itemList={items}/>
-            <ItemRegistrationPage onAddItem={addItem}/>
-            <ItemDeleter onDeleteItem={deleteItem}/></>}/>
 
-            <Route path="potlucks" element={<><PotluckViewerPage potluckList={potlucks}/>
-            <PotluckRegistrationPage onAddPotluck={addPotluck} />
-            <PotluckDeleter onDeletePotlucks={deletePotluck} />
-            <PotluckUpdate onPotluckUpdate={updatePotluck} /></>}/>
+            <Routes>
+                <Route path="items" element={<><ItemViewerPage itemList={items} />
+                    <ItemRegistrationPage onAddItem={addItem} />
+                    <ItemDeleter onDeleteItem={deleteItem} /></>} />
 
-            <Route path="userRegister" element={<UserRegisterPage />}/>
+                <Route path="potlucks" element={<><PotluckViewerPage potluckList={potlucks} />
+                    <PotluckRegistrationPage onAddPotluck={addPotluck} />
+                    <PotluckDeleter onDeletePotlucks={deletePotluck} />
+                    <PotluckUpdate onPotluckUpdate={updatePotluck} /></>} />
 
-        </Routes>
-    
-    </BrowserRouter>
+                <Route path="userRegister" element={<><UserRegisterPage /> <UserLogInPage /></>} />
 
-   
+            </Routes>
+
+        </BrowserRouter>
+
+
     </>)
 }
