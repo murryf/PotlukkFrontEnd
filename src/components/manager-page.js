@@ -54,18 +54,16 @@ export default function ManagerPage() {
 
     return (<>
 
-    <h1>Main</h1>
-
     <BrowserRouter>
         <Routes>
-            <Route path="itemviewer" element={ <ItemViewerPage itemList={items}/>}/>
-            <Route path="itemregister" element={<ItemRegistrationPage onAddItem={addItem}/>}/>
-            <Route path="deleteitem" element={<ItemDeleter onDeleteItem={deleteItem}/>}/>
+            <Route path="items" element={<><ItemViewerPage itemList={items}/>,
+            <ItemRegistrationPage onAddItem={addItem}/>,
+            <ItemDeleter onDeleteItem={deleteItem}/></>}/>
 
-            <Route path="potluckViewer" element={<PotluckViewerPage potluckList={potlucks} />}/>
-            <Route path="potluckregister" element={<PotluckRegistrationPage onAddPotluck={addPotluck} />}/>
-            <Route path="potluckdeleter" element={<PotluckDeleter onDeletePotlucks={deletePotluck} />}/>    
-            <Route path="potluckupdate" element={<PotluckUpdate onPotluckUpdate={updatePotluck} />}/>
+            <Route path="potlucks" element={<><PotluckViewerPage potluckList={potlucks}/>,
+            <PotluckRegistrationPage onAddPotluck={addPotluck} />,
+            <PotluckDeleter onDeletePotlucks={deletePotluck} />,
+            <PotluckUpdate onPotluckUpdate={updatePotluck} /></>}/>
 
             <Route path="userRegister" element={<UserRegisterPage />}/>
 
@@ -73,6 +71,5 @@ export default function ManagerPage() {
     
     </BrowserRouter>
    
-      
     </>)
 }
