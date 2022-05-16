@@ -72,18 +72,22 @@ export default function ManagerPage() {
                 <Routes>
                     <Route path="items" element={
                         <>
-                            <div class="item_view"><ItemViewerPage itemList={items} /></div>
-                            <div class="item_reg"><ItemRegistrationPage onAddItem={addItem} /></div>
-                            <div class="item_del"><ItemDeleter onDeleteItem={deleteItem}/></div>
+                            <div class="item_grid">
+                                <div class="item_view"><ItemViewerPage itemList={items} /></div>
+                                <div class="item_reg"><ItemRegistrationPage onAddItem={addItem} /></div>
+                                <div class="item_del"><ItemDeleter onDeleteItem={deleteItem}/></div>
+                            </div>
                         </>
                     }/>
 
                     <Route path="potlucks" element={
                         <>
-                            <div class="potluck_view"><PotluckViewerPage potluckList={potlucks} /></div>
-                            <div class="potluck_reg"><PotluckRegistrationPage onAddPotluck={addPotluck} /></div>
-                            <div class="potluck_del"><PotluckDeleter onDeletePotlucks={deletePotluck} /></div>
-                            <div class="potluck_up"><PotluckUpdate onPotluckUpdate={updatePotluck} /></div>
+                            <div class="potluck_grid">
+                                <div class="potluck_view"><PotluckViewerPage potluckList={potlucks} /></div>
+                                <div class="potluck_reg"><PotluckRegistrationPage onAddPotluck={addPotluck} /></div>
+                                <div class="potluck_del"><PotluckDeleter onDeletePotlucks={deletePotluck} /></div>
+                                <div class="potluck_up"><PotluckUpdate onPotluckUpdate={updatePotluck} /></div>
+                            </div>
                         </>
                     }/>
 
