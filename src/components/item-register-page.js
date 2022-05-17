@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function ItemRegistrationPage(props){
 
     const addItem = props.onAddItem;
-    
+
     // state variable for potlucks to be used to check, if valid potluck id exists
     const [potlucks, setPotlucks] = useState([]);
 
@@ -60,40 +60,36 @@ export default function ItemRegistrationPage(props){
             const body = await response.json();
             alert(`New ITEM was registered for Potluck ${body.potluckID}`);
             addItem(body);
-            
+
         }else{
             alert("ITEM CREATION FAILED!!!");
         }
     }
 
     return(<>
-        <h1>Item Registration</h1>
-        
-        <fieldset>
-            <legend>Register Item</legend>
+      <fieldset class="route_fieldset">
+          <legend class="green">Register Item</legend>
 
-            <label htmlFor="item_name">Item Name</label>
-            <br/>
-            <input onChange={updateItemName} name="name" type="text" placeholder="Fruit Salad"/>
-            <br/>
-            <label htmlFor="description">Description</label>
-            <br/>
-            <input onChange={updateItemDesc} name="description" type="text" placeholder="Apples, grapes, cantalope"/>
+          <label htmlFor="item_name">Item Name</label>
+          <br/>
+          <input onChange={updateItemName} name="name" type="text" placeholder="Fruit Salad"/>
+          <br/>
+          <label htmlFor="description">Description</label>
+          <br/>
+          <input onChange={updateItemDesc} name="description" type="text" placeholder="Apples, grapes, cantalope"/>
 
-            <br/>
-            <label htmlFor="supplier">Supplier</label>
-            <br/>
-            <input onChange={updateItemSupplier} name="supplier" type="text" placeholder="John Doe"/>
+          <br/>
+          <label htmlFor="supplier">Supplier</label>
+          <br/>
+          <input onChange={updateItemSupplier} name="supplier" type="text" placeholder="John Doe"/>
 
-            <br/>
-            <label htmlFor="potluck">Potluck ID</label>
-            <br/>
-            <input onChange={updatePotluckId} name="potluck" list="Potlucks"/>
-            <br/>
-            <br/>
-            <button onClick={makeItem}>Register Item</button>
-        </fieldset>
-        
-
-    </>)
+          <br/>
+          <label htmlFor="potluck">Potluck ID</label>
+          <br/>
+          <input onChange={updatePotluckId} name="potluck" list="Potlucks"/>
+          <br/>
+          <br/>
+          <button class="green" onClick={makeItem}>Register Item</button>
+      </fieldset>
+  </>)
 }

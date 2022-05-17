@@ -58,13 +58,13 @@ export default function ManagerPage() {
         <BrowserRouter>
             <div class="pageheading">
                 <label class="head_label">Stellar Potlukk App</label>
-                <fieldset>
-                    <legend class="yellow">Choose Your Path...</legend>
+                <fieldset class="head_fieldset">
+                    <legend class="blue">Choose Your Path...</legend>
                     <br />
                     <div class="link_grid">
-                        <div class="link_01"><button><Link to="/potlucks">Go to potlucks...</Link></button></div>
-                        <div class="link_02"><button><Link to="/items">Go to items...</Link></button></div>
-                        <div class="link_03"><button><Link to="/userregister">Log In...</Link></button></div>
+                        <div class="link_01"><button class="header_button"><Link to="/potlucks">Go to potlucks...</Link></button></div>
+                        <div class="link_02"><button class="header_button"><Link to="/items">Go to items...</Link></button></div>
+                        <div class="link_03"><button class="header_button"><Link to="/userregister">Log In...</Link></button></div>
                     </div>
                 </fieldset>
             </div>
@@ -72,25 +72,31 @@ export default function ManagerPage() {
                 <Routes>
                     <Route path="items" element={
                         <>
-                            <div class="item_view"><ItemViewerPage itemList={items} /></div>
-                            <div class="item_reg"><ItemRegistrationPage onAddItem={addItem} /></div>
-                            <div class="item_del"><ItemDeleter onDeleteItem={deleteItem}/></div>
+                            <div class="item_grid">
+                                <div class="item_view"><ItemViewerPage itemList={items} /></div>
+                                <div class="item_reg"><ItemRegistrationPage onAddItem={addItem} /></div>
+                                <div class="item_del"><ItemDeleter onDeleteItem={deleteItem}/></div>
+                            </div>
                         </>
                     }/>
 
                     <Route path="potlucks" element={
                         <>
-                            <div class="potluck_view"><PotluckViewerPage potluckList={potlucks} /></div>
-                            <div class="potluck_reg"><PotluckRegistrationPage onAddPotluck={addPotluck} /></div>
-                            <div class="potluck_del"><PotluckDeleter onDeletePotlucks={deletePotluck} /></div>
-                            <div class="potluck_up"><PotluckUpdate onPotluckUpdate={updatePotluck} /></div>
+                            <div class="potluck_grid">
+                                <div class="potluck_view"><PotluckViewerPage potluckList={potlucks} /></div>
+                                <div class="potluck_reg"><PotluckRegistrationPage onAddPotluck={addPotluck} /></div>
+                                <div class="potluck_del"><PotluckDeleter onDeletePotlucks={deletePotluck} /></div>
+                                <div class="potluck_up"><PotluckUpdate onPotluckUpdate={updatePotluck} /></div>
+                            </div>
                         </>
                     }/>
 
                     <Route path="userRegister" element={
                         <>
-                            <UserRegisterPage />
-                            <UserLogInPage />
+                            <div class="user_grid">
+                                <UserRegisterPage />
+                                <UserLogInPage />
+                            </div>
                         </>
                     }/>
 

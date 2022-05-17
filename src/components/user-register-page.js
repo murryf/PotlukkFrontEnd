@@ -53,10 +53,8 @@ export default function UserRegisterPage(){
 
 
     return(<>
-        <h1>Register New User</h1>
-        <fieldset>
-
-            <legend>Register User</legend>
+        <fieldset class="user_reg">
+            <legend class="purple">Register User</legend>
             <br/>
             <label>User Name</label>
             <br/>
@@ -66,10 +64,11 @@ export default function UserRegisterPage(){
             <br/>
             <input onChange={updatePassword} name="password" type="text" placeholder= "******"/>
             <br/>
-            <button onClick={createUser}>Submit</button>
+            <br/>
+            <button class="purple" onClick={createUser}>Submit</button>
 
         </fieldset>
-        
-    
+
+
     </>)
 }

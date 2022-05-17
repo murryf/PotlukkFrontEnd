@@ -38,10 +38,8 @@ export default function UserLogInPage() {
 
     //jsx "html" response
     return (<>
-
-        <h1>User Log in</h1>
-
-        <fieldset>
+        <fieldset class="user_log">
+            <legend class="blue">User Log in</legend>
             <label htmlFor="Username">UserName</label>
             <br />
             <input onChange={updateUserName} name="username" type="text" placeholder="JaneDoe" />
@@ -50,9 +48,9 @@ export default function UserLogInPage() {
             <br />
             <input onChange={updatePassword} name="password" type="password" />
             <br />
-            <button onClick={sendLoginInfo}>Log In</button>
+            <br />
+            <button class="blue" onClick={sendLoginInfo}>Log In</button>
         </fieldset>
-
     </>)
 
 }
