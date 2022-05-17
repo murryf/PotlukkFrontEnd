@@ -6,17 +6,22 @@
 - Lamech Israel
 - Khenan Terry
 
+## Deliverables
+- [Deployed Front-end](https://basic-setup-proposal.dookcd52c55p2.amplifyapp.com/)
+- [Deployed Back-end](http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com)
+
 ## Components
-- **Items**
-  - item-viewer-page
-  - item-register-page
-  - item delete page
-- **Potluck**
-  - potluck-viewer-page
-  - potluck-register-page
-  - potluck-delete-page
-  - potluck-update-page
-- **User**
-  - user-register-page
 - ***PARENT***
-  - manager-page
+  - manager-page.js
+- **Items**
+  - item-viewer-page.js
+  - item-register-page.js
+  - item delete page.js
+- **Potluck**
+  - potluck-viewer-page.js
+  - potluck-register-page.js
+  - potluck-deleter.js
+  - potluck-editor.js
+- **User**
+  - user-register-page.js
+  - user-login-page.js
