@@ -30,13 +30,14 @@ div.pageheading{
 /* LINK GRID */
 /* Link Buttons */
 div.link_01{grid-area: left;}
-div.link_02{grid-area: middle;}
-div.link_03{grid-area: right;}
+div.link_02{grid-area: mi1;}
+div.link_03{grid-area: mi2;}
+div.link_04{grid-area: right;}
 /* Link Grid Styling */
 div.link_grid{
   display: grid;
   grid-template-areas:
-    'left middle right';
+    'left mi1 mi2 right';
   gap: 10px;
 
   margin: auto;
