@@ -58,8 +58,8 @@ export default function ManagerPage() {
         <BrowserRouter>
             <div class="pageheading">
                 <label class="head_label">Stellar Potlukk App</label>
-                <fieldset>
-                    <legend class="yellow">Choose Your Path...</legend>
+                <fieldset class="head_fieldset">
+                    <legend class="blue">Choose Your Path...</legend>
                     <br />
                     <div class="link_grid">
                         <div class="link_01"><button class="header_button"><Link to="/potlucks">Go to potlucks...</Link></button></div>
@@ -93,8 +93,10 @@ export default function ManagerPage() {
 
                     <Route path="userRegister" element={
                         <>
-                            <UserRegisterPage />
-                            <UserLogInPage />
+                            <div class="user_grid">
+                                <UserRegisterPage />
+                                <UserLogInPage />
+                            </div>
                         </>
                     }/>
 

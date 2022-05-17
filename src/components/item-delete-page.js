@@ -32,7 +32,7 @@ export default function ItemDeleter(props){
     }
 
     return (<>
-        <fieldset>
+        <fieldset class="route_fieldset">
             <legend class="red">Delete Item</legend>
             <br/>
             <label>Item ID</label>

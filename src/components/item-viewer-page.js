@@ -26,8 +26,8 @@ export default function ItemViewerPage(props){
         </tr>)
 
     return (<>
-      <fieldset>
-          <legend class="yellow">Item viewer</legend>
+      <fieldset class="route_fieldset">
+          <legend class="blue">Item viewer</legend>
           <div class="item_window">
               <table>
                   <thead>

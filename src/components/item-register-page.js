@@ -67,7 +67,7 @@ export default function ItemRegistrationPage(props){
     }
 
     return(<>
-      <fieldset>
+      <fieldset class="route_fieldset">
           <legend class="green">Register Item</legend>
 
           <label htmlFor="item_name">Item Name</label>
