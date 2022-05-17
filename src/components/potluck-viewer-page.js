@@ -10,10 +10,10 @@ export default function PotluckViewerPage(props) {
 
 
     const potluckRows = props.potluckList.map(p => <tr key={p.id}>
-        <td>{p.id}</td>
-        <td>{p.potluckName}</td>
-        <td>{p.potluckDate}</td>
-        <td>{p.creator}</td>
+        <td class="p_id">{p.id}</td>
+        <td class="none">{p.potluckName}</td>
+        <td class="none">{p.potluckDate}</td>
+        <td class="c_id">{p.creator}</td>
 
     </tr>)
 
@@ -30,7 +30,7 @@ export default function PotluckViewerPage(props) {
                 {potluckRows}
             </tbody>
         </table>
-       
+
 
     </>)
 }
