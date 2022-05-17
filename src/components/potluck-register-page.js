@@ -10,8 +10,7 @@ export default function PotluckRegistrationPage(props) {
     const [potluckName, setPotluckName] = useState("");
     const [potluckDate, setPotluckDate] = useState("");
     const [creator, setCreatorId] = useState("");
-
-    let potluck = "";
+    let userStuff = "";
 
     function updatePotluckName(event) {
         setPotluckName(event.target.value)
@@ -30,14 +29,13 @@ export default function PotluckRegistrationPage(props) {
 
 
 
-        const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks`);
-        const body = await response.json();
-        potluck = body;
-        const userStuff = JSON.parse(sessionStorage.getItem("user"))
+        if (sessionStorage != null) {
+            userStuff = JSON.parse(sessionStorage.getItem("user"))
+        }
 
 
-
-        if (potluck.creator === userStuff.userID) {
+        if (userStuff != "") {
+            setCreatorId(userStuff.userID)
 
             const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks`, {
                 body: JSON.stringify(potluck),
