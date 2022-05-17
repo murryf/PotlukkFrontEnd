@@ -209,7 +209,11 @@ div.user_window{
 
 
 /* Tables */
+table{
+  width: 100%;
+}
 thead{
+  text-align: left;
   position: sticky;
   border-style: solid;
   border-color: #FFFFFF;
