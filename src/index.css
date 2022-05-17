@@ -105,15 +105,15 @@ div.main_grid{
 }
 /* Item Grid Arrangement & Styling */
 /* Item Grid Area Assignments */
-.item_view{grid-area: low;}
+.item_view{grid-area: top;}
 .item_reg{grid-area: reg;}
 .item_del{grid-area: del;}
 /* Item Grid Styling */
 div.item_grid{
   display: grid;
   grid-template-areas:
-    'reg del'
-    'low low';
+    'top top'
+    'reg del';
   gap: 10px;
   padding: 10px;
   bottom: 10px;
