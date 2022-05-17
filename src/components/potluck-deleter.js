@@ -50,12 +50,8 @@ export default function PotluckDeleter(props) {
     }
 
     return (<>
-
-        <h1>Delete Potluck</h1>
-
-        <fieldset>
-
-            <legend>Delete Potluck</legend>
+        <fieldset class="potluck_del">
+            <legend class="red">Delete Potluck</legend>
             <br />
             <label>Potluck ID</label>
             <br />
@@ -63,9 +59,7 @@ export default function PotluckDeleter(props) {
             <br />
             <br />
             <br />
-            <button onClick={deletePotluck}>Delete Potluck</button>
-
+            <button class="red" onClick={deletePotluck}>Delete Potluck</button>
         </fieldset>
-
     </>)
 }

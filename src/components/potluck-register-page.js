@@ -64,12 +64,8 @@ export default function PotluckRegistrationPage(props) {
 
 
     return (<>
-
-        <h1>Register Potluck</h1>
-
-        <fieldset>
-
-            <legend>Register Potluck</legend>
+        <fieldset class="potluck_reg">
+            <legend class="green">Register Potluck</legend>
             <br />
             <label>Potluck Name</label>
             <br />
@@ -86,10 +82,8 @@ export default function PotluckRegistrationPage(props) {
             <input onInput={updateCreatorID} name="creatorId" type="text" placeholder="1" />
             <br />
             <br />
-            <button onClick={createPotluck}>Create Potluck</button>
-
+            <button class="green" onClick={createPotluck}>Create Potluck</button>
         </fieldset>
-
     </>)
 
 

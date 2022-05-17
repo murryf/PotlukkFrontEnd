@@ -54,12 +54,8 @@ export default function PotluckUpdate(props) {
     }
 
     return (<>
-
-        <h1>Edit Potluck</h1>
-
-        <fieldset>
-
-            <legend>Update Potluck</legend>
+        <fieldset class="potluck_up">
+            <legend class="purple">Update Potluck</legend>
             <br />
             <label>Potluck ID</label>
             <br />
@@ -70,9 +66,7 @@ export default function PotluckUpdate(props) {
             <input onInput={updatePotluckDate} name="potluckDate" type="text" placeholder="12/1/2019 12:00 pm" />
             <br />
             <br />
-            <button onClick={updatePotluck}>Update Potluck</button>
-
+            <button class="purple" onClick={updatePotluck}>Update Potluck</button>
         </fieldset>
-
     </>)
 }

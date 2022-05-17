@@ -64,9 +64,15 @@ fieldset{
   border-radius: 15px;
   box-shadow: 5px 5px;
   height: 250px;
+  overflow: auto;
 }
 fieldset.head_fieldset{
-  height: 75px;
+  height: 85px;
+  overflow: none;
+}
+fieldset.potluck_fieldset{
+  height: 810px;
+  overflow: none;
 }
 legend{
   box-shadow: 2px 2px black;
@@ -121,18 +127,17 @@ div.item_grid{
 }
 /* Potluck Grid Arrangement & Styling */
 /* Potluck Grid Area Assignments */
-.potluck_header{grid-area: top;}
-.potluck_view{grid-area: top-left;}
-.potluck_reg{grid-area: top-right;}
-.potluck_up{grid-area: bottom-left;}
-.potluck_del{grid-area: bottom-right;}
+.potluck_view{grid-area: vie;}
+.potluck_reg{grid-area: reg;}
+.potluck_up{grid-area: upd;}
+.potluck_del{grid-area: del;}
 /* Potluck Grid Styling */
 div.potluck_grid{
   display: grid;
   grid-template-areas:
-    'top top'
-    'top-left top-right'
-    'bottom-left bottom-right';
+    'vie reg'
+    'vie upd'
+    'vie del';
   gap: 10px;
   padding: 10px;
   bottom: 10px;
@@ -213,22 +218,19 @@ button.blue{
   background-color: #008ACF;
   border-color: #00BAFF;
 }
+
+/* Tables */
 div.item_window,
 div.potluck_window,
 div.user_window{
   height: 300px;
   width: 100%;
-  overflow: auto;
 }
-
-
-/* Tables */
 table{
   width: 100%;
 }
 thead{
   text-align: left;
-  position: sticky;
   border-style: solid;
   border-color: #FFFFFF;
   color: #FFAA00;

@@ -18,19 +18,21 @@ export default function PotluckViewerPage(props) {
     </tr>)
 
     return (<>
-        <h1>Poltuck viewer</h1>
-        <table>
-            <thead>
-                <tr><th>Potluck ID</th>
-                    <th>Potluck Name</th>
-                    <th>Potluck Date</th>
-                    <th>Creator ID</th></tr>
-            </thead>
-            <tbody>
-                {potluckRows}
-            </tbody>
-        </table>
-
-
-    </>)
+      <fieldset class="potluck_fieldset">
+          <legend class="blue">Poltuck viewer</legend>
+          <div class="potluck_window">
+              <table>
+                  <thead>
+                      <tr><th>Potluck ID</th>
+                          <th>Potluck Name</th>
+                          <th>Potluck Date</th>
+                          <th>Creator ID</th></tr>
+                  </thead>
+                  <tbody>
+                      {potluckRows}
+                  </tbody>
+              </table>
+          </div>
+      </fieldset>
+  </>)
 }
