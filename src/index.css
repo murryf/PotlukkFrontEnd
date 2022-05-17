@@ -82,7 +82,7 @@ button{
 button.header_button{
   color: #FFFFFF;
   background-color: #FFFFFF;
-  border-color: #AFCABF;
+  border-color: #008ACF;
 }
 
 /* All MAIN GRIDS' styling follows */
@@ -138,9 +138,16 @@ div.potluck_grid{
 }
 /* User Grid Arrangement & Styling */
 /* User Grid Area Assignments */
+.user_reg{grid-area: reg;}
+.user_log{grid-area: log;}
 /* User Grid Styling */
 div.user_grid{
-
+  display: grid;
+  grid-template-areas:
+    'reg log';
+  gap: 10px;
+  padding: 10px;
+  bottom: 10px;
 }
 
 
@@ -198,6 +205,12 @@ legend.blue{
   font-weight: 700;
   background-color: #008ACF;
   border-radius: 5px;
+}
+/* Buttons */
+button.blue{
+  color: #FFFFFF;
+  background-color: #008ACF;
+  border-color: #004A9F;
 }
 div.item_window,
 div.potluck_window,
