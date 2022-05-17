@@ -10,7 +10,7 @@ export default function PotluckRegistrationPage(props) {
     const [potluckName, setPotluckName] = useState("");
     const [potluckDate, setPotluckDate] = useState("");
     const [creator, setCreatorId] = useState("");
-    let userStuff = "";
+    let userStuff = 0;
 
     function updatePotluckName(event) {
         setPotluckName(event.target.value)
@@ -32,7 +32,7 @@ export default function PotluckRegistrationPage(props) {
 
 
 
-        if (userStuff != "") {
+        if (sessionStorage.getItem("user") != null) {
             userStuff = JSON.parse(sessionStorage.getItem("user"))
             setCreatorId(userStuff.userID)
 

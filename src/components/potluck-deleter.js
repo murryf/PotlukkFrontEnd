@@ -20,9 +20,11 @@ export default function PotluckDeleter(props) {
         const body = await response.json();
         potluck = body;
 
+        console.log();
 
 
-        if (userStuff != "") {
+
+        if (sessionStorage.getItem("user") != null) {
             userStuff = JSON.parse(sessionStorage.getItem("user"))
             if (potluck.creator === userStuff.userID && userStuff.userID != null) {
                 const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}`, {
