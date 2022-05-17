@@ -65,6 +65,7 @@ export default function ManagerPage() {
                         <div class="link_01"><button class="header_button"><Link to="/potlucks">Go to potlucks...</Link></button></div>
                         <div class="link_02"><button class="header_button"><Link to="/items">Go to items...</Link></button></div>
                         <div class="link_03"><button class="header_button"><Link to="/userregister">Log In...</Link></button></div>
+                        <div class="link_04"><button class="header_button"><Link to="/">Return home</Link></button></div>
                     </div>
                 </fieldset>
             </div>
