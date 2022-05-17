@@ -11,6 +11,7 @@ export default function PotluckDeleter(props) {
     const [potluckId, setPotluckId] = useState("");
 
     let potluck = "";
+    let userStuff = "";
 
 
     async function deletePotluck() {
@@ -18,29 +19,35 @@ export default function PotluckDeleter(props) {
         const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}`);
         const body = await response.json();
         potluck = body;
-        const userStuff = JSON.parse(sessionStorage.getItem("user"))
+
+        if (sessionStorage != null) {
+            userStuff = JSON.parse(sessionStorage.getItem("user"))
+        }
 
 
+        if (userStuff != "") {
+            if (potluck.creator === userStuff.userID && userStuff.userID != null) {
+                const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}`, {
+                    body: JSON.stringify(potluckId),
+                    method: "DELETE",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
 
-        if (potluck.creator === userStuff.userID) {
-            const response = await fetch(`http://potlukk-env.eba-cnm6zrpt.us-east-2.elasticbeanstalk.com/potlucks/${potluckId}`, {
-                body: JSON.stringify(potluckId),
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json"
+                if (response.status === 200) {
+                    const body = await response.json()
+                    console.log(`Potluck ${potluckId} deleted`)
+                    deleteThisPotluck(body)
+                } else {
+                    console.log("Failed to add potluck.")
                 }
-            });
 
-            if (response.status === 200) {
-                const body = await response.json()
-                console.log(`Potluck ${potluckId} deleted`)
-                deleteThisPotluck(body)
             } else {
-                console.log("Failed to add potluck.")
+                alert("You do not have authorization to delete this.")
             }
-
         } else {
-            alert("You do not have authorization to delete this.")
+            alert("You do not have authorization to delete this. Please log in to delete")
         }
 
     }
